@@ -7,6 +7,7 @@ using std::endl;
 using std::string;
 using std::unordered_map;
 
+typedef long double BigBoi;
 
 // static map container for generic strings
 static unordered_map<string, string> generic(
@@ -18,15 +19,15 @@ static unordered_map<string, string> generic(
 
 
 // function signatures
-int fib (const int);
-int fibo (const int, const int, const int);
+BigBoi fib (const BigBoi);
+BigBoi fibo (const BigBoi, const BigBoi, const BigBoi);
 
 
 int main() {
     cout << generic["greeting"];
     cout << generic["getInteger"];
 
-    int input;
+    BigBoi input;
     cin >> input;
 
     cout << generic["printResult"];
@@ -38,7 +39,7 @@ int main() {
 
 
 // wrapper function for the core fibonacci function
-int fib(const int n) {
+BigBoi fib(const BigBoi n) {
     return fibo(n, 0, 1);
     // unoptimized recursive calls
     //return  (n == 0) ? 0 :
@@ -47,7 +48,7 @@ int fib(const int n) {
 
 
 // recursive function with optimization for tail calls
-int fibo (const int i, const int pre, const int cur) {
+BigBoi fibo (const BigBoi i, const BigBoi pre, const BigBoi cur) {
     cout << i << "\t: " << pre << endl;
     if (i == 0) return cur;
     return fibo(i-1, cur, pre+cur);
