@@ -6,6 +6,9 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::unordered_map;
+
+
+// static map container for generic strings
 static unordered_map<string, string> generic(
         {
             {"greeting", "Hello, world!\n"},
@@ -13,33 +16,40 @@ static unordered_map<string, string> generic(
             {"printResult", "The final result is: "}
         });
 
+
+// function signatures
 int fib (const int);
 int fibo (const int, const int, const int);
+
 
 int main() {
     cout << generic["greeting"];
     cout << generic["getInteger"];
+
     int input;
     cin >> input;
 
-    auto result = fib(input);
     cout << generic["printResult"];
+    auto result = fib(input);
     cout << result << endl;
 
     return 0;
 }
 
 
-int fib (const int n) {
+// wrapper function for the core fibonacci function
+int fib(const int n) {
     return fibo(n, 0, 1);
+    // unoptimized recursive calls
     //return  (n == 0) ? 0 :
             //(n == 1) ? 1 : fib(n-1) + fib(n-2);
 }
 
-int fibo (const int n, const int pre, const int cur) {
-    cout << n << "\t: " << pre << endl;
-    if (n == 0) return cur;
-    return fibo(n-1, cur, pre+cur);
+
+// recursive function with optimization for tail calls
+int fibo (const int i, const int pre, const int cur) {
+    cout << i << "\t: " << pre << endl;
+    if (i == 0) return cur;
+    return fibo(i-1, cur, pre+cur);
 }
-// added newline at the end of source file
 
