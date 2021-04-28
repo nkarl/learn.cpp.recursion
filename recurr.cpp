@@ -10,13 +10,10 @@ using std::unordered_map;
 typedef long double BigBoi;
 
 // static map container for generic strings
-static unordered_map<string, string> generic(
-        {
-            {"greeting", "Hello, world!\n"},
-            {"getInteger", "Please enter a number: "},
-            {"printResult", "The final result is: "}
-        });
-
+static unordered_map<string, string>
+    generic({{"greeting", "Hello, world!\n"},
+             {"getInteger", "Please enter a number: "},
+             {"printResult", "The final result is: "}});
 
 // function signatures
 BigBoi fib (const BigBoi);
@@ -53,4 +50,3 @@ BigBoi fibo (const BigBoi i, const BigBoi pre, const BigBoi cur) {
     if (i == 0) return cur;
     return fibo(i-1, cur, pre+cur);
 }
-
