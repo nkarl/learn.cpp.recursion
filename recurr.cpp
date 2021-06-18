@@ -16,10 +16,11 @@ static unordered_map<string, string>
              {"printResult", "The final result is: "}});
 
 // function signatures
-BigBoi fib (const BigBoi);
-BigBoi fibo (const BigBoi, const BigBoi, const BigBoi);
+BigBoi fib(const BigBoi);
+BigBoi fibo(const BigBoi, const BigBoi, const BigBoi);
 
 
+// main entry poitn
 int main() {
     cout << generic["greeting"];
     cout << generic["getInteger"];
@@ -45,8 +46,9 @@ BigBoi fib(const BigBoi n) {
 
 
 // recursive function with optimization for tail calls
-BigBoi fibo (const BigBoi i, const BigBoi pre, const BigBoi cur) {
-    cout << i << "\t: " << pre << endl;
-    if (i == 0) return cur;
-    return fibo(i-1, cur, pre+cur);
+BigBoi fibo(const BigBoi i, const BigBoi pre, const BigBoi cur) {
+  cout << i << "\t: " << pre << endl;
+  // if (i == 0) return cur;
+  // return fibo(i-1, cur, pre+cur);
+  return i == 0 ? cur : fibo(i - 1, cur, pre + cur);
 }
