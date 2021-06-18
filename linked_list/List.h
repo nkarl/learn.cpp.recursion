@@ -14,7 +14,7 @@ struct Node {
     Node *next = nullptr;
     Node *prev = nullptr;
 
-    Node(T key) : key(key) {}
+    Node(T key) : key(key) { }
 };
 
 /*
@@ -25,8 +25,10 @@ class List {
   private:
     Node<T> *head;
     Node<T> *tail;
+    int      size;
 
     void _print_list(const Node<T> *n) {
+        /* base case */
         if (n->next == nullptr) {
             cout << n->key;
             return;
@@ -36,7 +38,11 @@ class List {
     }
 
   public:
-    List(T key) : head(new Node<T>(key)) {}
+    /* CONSTRUCTOR */
+    explicit List(T key) : head(new Node<T>(key)),
+                           size(1) { }
+
+    /* DESTRUCTOR */
     ~List() { clear_list(this->head); }
 
     void insert(T key) {
@@ -53,6 +59,7 @@ class List {
             n->prev          = this->tail;
             this->tail       = n;
         }
+        ++this->size;
     }
 
     void print_list() {
@@ -61,11 +68,11 @@ class List {
         cout << "]" << endl;
         cout << "head=" << this->head->key << endl;
         cout << "tail=" << this->tail->key << endl;
+        cout << "size=" << this->size << endl;
     }
 
     void clear_list(Node<T> *n) {
-        if (n == nullptr)
-            return;
+        if (n == nullptr) return;
         Node<T> *curr = n->next;
         delete n;
         clear_list(curr);

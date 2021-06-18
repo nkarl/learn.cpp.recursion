@@ -3,7 +3,7 @@ Language                                       : Cpp
 # BasedOnStyle                                 : WebKit
 AccessModifierOffset                           : -2
 AlignAfterOpenBracket                          : true
-AlignConsecutiveMacros                         : true
+AlignConsecutiveMacros                         : false
 AlignConsecutiveAssignments                    : true
 AlignConsecutiveDeclarations                   : true
 AlignEscapedNewlines                           : Right
@@ -116,9 +116,9 @@ SpaceBeforeCtorInitializerColon                : true
 SpaceBeforeInheritanceColon                    : true
 SpaceBeforeParens                              : ControlStatements
 SpaceBeforeRangeBasedForLoopColon              : true
-SpaceInEmptyBlock                              : false
+SpaceInEmptyBlock                              : true
 SpaceInEmptyParentheses                        : false
-SpacesBeforeTrailingComments                   : 1
+SpacesBeforeTrailingComments                   : 2
 SpacesInAngles                                 : false
 SpacesInConditionalStatement                   : false
 SpacesInContainerLiterals                      : true
