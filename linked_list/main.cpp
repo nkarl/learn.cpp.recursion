@@ -25,7 +25,7 @@ int main(int argc, const char *argv[]) {
     for (int i = 1; i < args.size(); ++i) {
         myList.insert(args[i]);
     }
-    myList.print_list();
+    myList.show();
 
     return 0;
 }
@@ -34,6 +34,10 @@ int main(int argc, const char *argv[]) {
  * CAPTURE THE CL ARGUMENTS
  */
 vector<string> *capture_args(int argc, const char *argv[]) {
+    if (argc <= 1) {
+        std::cerr << "Error: no arguments passed" << endl;
+        exit(EXIT_FAILURE);
+    }
     vector<string> *args = new vector<string>();
     for (int i = 1; i < argc; ++i) {
         string word = argv[i];
