@@ -18,7 +18,12 @@ static unordered_map<string, string>
 // function signatures
 BigBoi fib(const BigBoi);
 BigBoi fibo(const BigBoi, const BigBoi, const BigBoi);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5673769a8090bec1ecee5ada551d75bc1a29673b
+
+// main entry poitn
 int main() {
   cout << generic["greeting"];
   cout << generic["getInteger"];
@@ -44,7 +49,13 @@ BigBoi fib(const BigBoi n) {
 // recursive function with optimization for tail calls
 BigBoi fibo(const BigBoi i, const BigBoi pre, const BigBoi cur) {
   cout << i << "\t: " << pre << endl;
+<<<<<<< HEAD
   if (i == 0)
     return cur;
   return fibo(i - 1, cur, pre + cur);
+=======
+  // if (i == 0) return cur;
+  // return fibo(i-1, cur, pre+cur);
+  return i == 0 ? cur : fibo(i - 1, cur, pre + cur);
+>>>>>>> 5673769a8090bec1ecee5ada551d75bc1a29673b
 }

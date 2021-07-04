@@ -1,0 +1,17 @@
+{
+    "configurations": {
+        "DEBUG_SESSION: Launch": {
+            "adapter": "gdb",
+            "configuration": {
+                "name": "DEBUG_SESSION: Launch",
+                "type": "gdb",
+                "request": "launch",
+                "cwd": "${workspaceRoot}",
+                "python": "/usr/bin/g++",
+                "stopOnEntry": true,
+                "debugOptions": [],
+                "program": "${file}"
+                }
+        }
+    }
+}
